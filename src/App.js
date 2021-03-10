@@ -7,14 +7,14 @@ import TodoForm from './components/Forms';
 
 function App() {
     const data = [
-        {text:"Apprendre JS" , isCompleted : false},
-        {text : "Apprendre React" , isCompleted : false},
-        {text: "Apprendre Axios" , isCompleted : false}
+        { text: "Apprendre JS", isCompleted: false },
+        { text: "Apprendre React", isCompleted: false },
+        { text: "Apprendre Axios", isCompleted: false }
     ];
     const [todos, setTodos] = useState(data);
 
     const addTodo = text => {
-        const newTodos = [...todos, {text}];
+        const newTodos = [...todos, { text }];
         setTodos(newTodos);
     };
 
@@ -26,27 +26,28 @@ function App() {
 
     const removeTodo = (index) => {
         const newTodos = [...todos];
-        newTodos.splice(index , 1);
+        newTodos.splice(index, 1);
         setTodos(newTodos);
     };
- 
-   return (
-       <div className="app">
-        <div className="Todo-list">
-       {todos.map((todo,index) => (
-        <Todo 
-        key = {index} 
-        index= {index} 
-        todo = {todo} 
-        completedTodo = {completedTodo}
-        removeTodo = {removeTodo}
-        />
-       ))}
-       
-        <TodoForm addTodo = {addTodo}/>
-        </div>
-       </div>
-   );
+
+    return ( <
+        div className = "app" >
+        <
+        div className = "Todo-list" > {
+            todos.map((todo, index) => ( <
+                Todo key = { index }
+                index = { index }
+                todo = { todo }
+                completedTodo = { completedTodo }
+                removeTodo = { removeTodo }
+                />
+            ))
+        } <
+        TodoForm addTodo = { addTodo }
+        /> <
+        /div> <
+        /div>
+    );
 };
 
 export default App;
